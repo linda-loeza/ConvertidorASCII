@@ -1,2 +1,6 @@
-# ConvertidorASCII
-Convertidor de imagenes a arte ASCII en formato .txt
+# Convertidor de Imágenes a ASCII  
+**Equipo**: Victor, Edrei, Kevin, Roberto, Natalia.  
+
+## Instalación  
+```bash
+gcc main.c -o ascii_art -lm
