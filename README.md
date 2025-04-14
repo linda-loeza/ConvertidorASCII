@@ -17,7 +17,7 @@
 ## 🚀 **Inicio**  
 1. **Clonar el repositorio**:  
    ```bash  
-   git clone https://github.com/tuusuario/EquipoConvertidorASCII.git  
+   git clone https://github.com/Victor-Gonzalez-Nahuat/ConvertidorASCII.git
    cd EquipoConvertidorASCII  
 
 2. **Flujo de trabajo**: 
