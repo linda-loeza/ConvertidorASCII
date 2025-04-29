@@ -7,7 +7,7 @@
 
 unsigned char* cargarImagen(const char* ruta, int* ancho, int* alto) {
     const char* extension = strrchr(ruta, '.');
-    if (!extension || (!strcmp(extension, ".jpg") && !strcmp(extension, ".png") && !strcmp(extension, ".jpeg"))) {
+    if (!extension || (strcmp(extension, ".jpg") != 0 && strcmp(extension, ".png") != 0 && strcmp(extension, ".jpeg") != 0)) {
         printf("Error: Formato no soportado. Usa .jpg, .png o .jpeg\n");
         return NULL;
     }
@@ -19,8 +19,14 @@ unsigned char* cargarImagen(const char* ruta, int* ancho, int* alto) {
         printf("Error al cargar la imagen. Verifica la ruta.\n");
         return NULL;
     }
+
     if (canales == 4) {
         unsigned char* imagen_rgb = (unsigned char*)malloc(*ancho * *alto * 3);
+        if (!imagen_rgb) {
+            printf("Error al asignar memoria.\n");
+            stbi_image_free(imagen);
+            return NULL;
+        }
         for (int i = 0, j = 0; i < (*ancho * *alto * 4); i += 4, j += 3) {
             imagen_rgb[j] = imagen[i];     // R
             imagen_rgb[j+1] = imagen[i+1]; // G
@@ -36,5 +42,5 @@ unsigned char* cargarImagen(const char* ruta, int* ancho, int* alto) {
 }
 
 void liberarImagen(unsigned char* imagen) {
-    stbi_image_free(imagen);  
+    free(imagen);  
 }
