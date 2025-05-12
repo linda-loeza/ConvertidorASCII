@@ -1,8 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "funciones.h"
 #include <math.h>
 
-void convertir_a_grises(unsigned char* imagen, int ancho, int alto, int nuevo_ancho, int* nuevo_alto_salida) {
+unsigned char* convertir_a_grises(unsigned char* imagen, int ancho, int alto, int nuevo_ancho, int* nuevo_alto_salida) {
     //Escalar imagen par aque quepa en la terminal
 
     float escala = (float)nuevo_ancho / ancho; //Estandar de escala reduccion en horizontal
