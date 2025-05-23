@@ -25,8 +25,7 @@ Imagen* convertir_a_grises(Imagen* imagen_color, int nuevo_ancho);
 char* convertir_a_ascii(Imagen* imagen_gris);
 
 // 💾 Guarda arte ASCII en archivo .txt (el usuario pone el nombre)
-void guardar_ascii(const char* arte_ascii, int ancho, int alto, const char* ruta_salida);
-
+void guardar_ascii(char* arte_ascii, const char* ruta_salida);
 // 📋 Menú de navegación del programa
 void menu(void);
 
