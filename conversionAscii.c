@@ -16,7 +16,7 @@ int intensidad = strlen(caracteres);
     unsigned char* datos = imagen_gris->datos;
 
     int tamanoASCII = (ancho + 1) * alto + 1; // +1 por salto de línea, +1 por '\0'
-    char* asciiArt = malloc(tamanoASCII);
+    char* asciiArt = malloc(tamanoASCII); //guarda memoria para el arte ascii
     if(!asciiArt){
         return NULL;
     }
